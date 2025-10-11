@@ -1,0 +1,94 @@
+import logo from '../../assets/logo_02.png'
+import { NavLink } from "react-router-dom";
+
+function Navbar() {
+    return (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body"
+            data-bs-theme="dark">
+
+            <div className="container-fluid" style={{ maxWidth: '1400px' }}>
+                <img src={logo} width="120px" alt="logo" />
+                <NavLink className="navbar-brand" to="/">Zona Gamer</NavLink>
+
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="navbar-nav justify-content-center w-100" style={{ gap: '2rem' }}>
+                        {/* NavLink cambia automáticamente la clase a "active" según la ruta */}
+                        <NavLink className="nav-link" to="/" end>Home</NavLink>
+                        <NavLink className="nav-link" to="/productos">Productos</NavLink>
+                        <NavLink className="nav-link" to="/nosotros">Nosotros</NavLink>
+                        <NavLink className="nav-link" to="/blogs">Blogs</NavLink>
+                        <NavLink className="nav-link" to="/registro">Registrate</NavLink>
+                    </div>
+
+                    <div className="d-flex align-items-center gap-3 ms-lg-auto mt-3 mt-lg-0" style={{ marginRight: '2rem' }}>
+                        <NavLink 
+                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                            to="/login"
+                            style={({ isActive }) => ({
+                                color: isActive ? '#fff' : 'rgba(255,255,255,0.75)',
+                                fontWeight: isActive ? '600' : '400',
+                                padding: '0.5rem 1rem',
+                                borderRadius: '6px',
+                                backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                transition: 'all 0.2s ease'
+                            })}
+                        >
+                            Iniciar Sesión
+                        </NavLink>
+                        
+                        <div className="cart-icon-wrapper" style={{ position: 'relative', cursor: 'pointer' }}>
+                            <svg 
+                                className="cart-icon" 
+                                width="32px" 
+                                height="32px" 
+                                viewBox="0 0 24 24" 
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style={{ transition: 'transform 0.2s ease' }}
+                                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                            >
+                                <path fillRule="evenodd" clipRule="evenodd"
+                                    d="M1.28869 2.76279C1.41968 2.36983 1.84442 2.15746 2.23737 2.28845L2.54176 2.38991C3.16813 2.59868 3.69746 2.7751 4.1137 2.96873C4.55613 3.17456 4.94002 3.42965 5.23112 3.83352C5.52222 4.2374 5.64282 4.68226 5.69817 5.16708C5.72644 5.41467 5.73936 5.69227 5.74526 5.99996H16.4508C18.5058 5.99996 19.5333 5.99996 19.9779 6.67422C20.4225 7.34849 20.0177 8.2929 19.2082 10.1817L18.7797 11.1817C18.4017 12.0636 18.2128 12.5045 17.8371 12.7522C17.4614 13 16.9817 13 16.0222 13H5.9034C6.00839 13.5398 6.17403 13.8558 6.40921 14.091C6.68598 14.3677 7.07455 14.5482 7.80832 14.6468C8.56367 14.7484 9.56479 14.75 11.0002 14.75H18.0002C18.4144 14.75 18.7502 15.0857 18.7502 15.5C18.7502 15.9142 18.4144 16.25 18.0002 16.25H10.9453C9.57774 16.25 8.47542 16.25 7.60845 16.1334C6.70834 16.0124 5.95047 15.7535 5.34855 15.1516C4.74664 14.5497 4.48774 13.7918 4.36673 12.8917C4.25017 12.0247 4.25018 10.9224 4.2502 9.55484L4.2502 6.883C4.2502 6.17 4.24907 5.69823 4.20785 5.33722C4.16883 4.99538 4.10068 4.83049 4.01426 4.71059C3.92784 4.59069 3.79296 4.47389 3.481 4.32877C3.15155 4.17551 2.70435 4.02524 2.02794 3.79978L1.76303 3.71147C1.37008 3.58049 1.15771 3.15575 1.28869 2.76279Z"
+                                    fill="#ffffff"></path>
+                                <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"
+                                    fill="#ffffff"></path>
+                                <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z"
+                                    fill="#ffffff"></path>
+                            </svg>
+                            <span 
+                                className="cart-count" 
+                                style={{
+                                    position: 'absolute',
+                                    top: '-8px',
+                                    right: '-8px',
+                                    backgroundColor: '#dc3545',
+                                    color: 'white',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 'bold',
+                                    borderRadius: '50%',
+                                    minWidth: '18px',
+                                    height: '18px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
+                                }}
+                            >
+                                0
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )
+}
+
+export default Navbar;
