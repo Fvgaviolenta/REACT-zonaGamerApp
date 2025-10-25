@@ -31,6 +31,7 @@ const products = [
             'https://www.winpy.cl/files/38856-1725-RTX-4070-TI-SUPER-16G-VENTUS-3X-1.jpg',
         categoryId: 'gpu',
         isFeatured: true,
+        stock: 15, 
     },
     {
         id: '2',
@@ -41,6 +42,7 @@ const products = [
             'https://i.bolder.run/r/czozMjIxLGc6NjkweA/2d37a7fc/736207-Kumara1.png',
         categoryId: 'teclados',
         isFeatured: true,
+        stock: 8, 
     },
     {
         id: '3',
@@ -51,6 +53,7 @@ const products = [
             'https://gsmpro.cl/cdn/shop/files/procesador-intel-core-i7-12700kf.jpg?v=1747340810&width=900',
         categoryId: 'cpu',
         isFeatured: true,
+        stock: 22, 
     },
     {
         id: '4',
@@ -61,6 +64,7 @@ const products = [
             'https://media.spdigital.cl/thumbnails/products/tmp_1ggc33p_21eb8266_thumbnail_4096.jpg',
         categoryId: 'hardware',
         isFeatured: true,
+        stock: 5,
     },
 ];
 

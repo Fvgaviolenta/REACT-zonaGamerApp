@@ -5,8 +5,11 @@ import banner3 from "../assets/banner03.png";
 import banner4 from "../assets/banner04.png";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
+
 
 function App() {
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const banners = [banner1, banner2, banner3, banner4];
 
@@ -20,6 +23,7 @@ function App() {
   const navigate = useNavigate();
   return (
     <div className="app-container">
+      <Navbar/>
       {/* ========= HERO ========= */}
       <section className="hero">
         {banners.map((banner, index) => (
